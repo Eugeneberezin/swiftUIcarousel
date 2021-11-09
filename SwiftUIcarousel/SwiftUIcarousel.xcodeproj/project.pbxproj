@@ -55,6 +55,7 @@
 		051688F5273A246000A94CAE /* SwiftUIcarousel */ = {
 			isa = PBXGroup;
 			children = (
+				0516890D273A290500A94CAE /* Views */,
 				05168908273A24F200A94CAE /* DataModel */,
 				05168905273A24A400A94CAE /* Service */,
 				05168904273A248C00A94CAE /* ViweModel */,
@@ -95,6 +96,13 @@
 				0516890B273A273200A94CAE /* SearchResult.swift */,
 			);
 			path = DataModel;
+			sourceTree = "<group>";
+		};
+		0516890D273A290500A94CAE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
