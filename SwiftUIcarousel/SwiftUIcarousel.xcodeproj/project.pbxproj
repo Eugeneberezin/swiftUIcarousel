@@ -15,6 +15,8 @@
 		0516890C273A273200A94CAE /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0516890B273A273200A94CAE /* SearchResult.swift */; };
 		05B12FC1274496F700832E8B /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B12FC0274496F700832E8B /* ViewModel.swift */; };
 		05B12FC32744980900832E8B /* MovieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B12FC22744980900832E8B /* MovieView.swift */; };
+		05B12FC5274DD57100832E8B /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B12FC4274DD57100832E8B /* HomeView.swift */; };
+		05B12FC7274DDA7F00832E8B /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B12FC6274DDA7F00832E8B /* SearchBarView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +29,8 @@
 		0516890B273A273200A94CAE /* SearchResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchResult.swift; path = ../../../../MovieListSwiftUI/MovieListSwiftUI/DataModel/SearchResult.swift; sourceTree = "<group>"; };
 		05B12FC0274496F700832E8B /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		05B12FC22744980900832E8B /* MovieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieView.swift; sourceTree = "<group>"; };
+		05B12FC4274DD57100832E8B /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		05B12FC6274DDA7F00832E8B /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +111,8 @@
 			isa = PBXGroup;
 			children = (
 				05B12FC22744980900832E8B /* MovieView.swift */,
+				05B12FC4274DD57100832E8B /* HomeView.swift */,
+				05B12FC6274DDA7F00832E8B /* SearchBarView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -182,8 +188,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				05B12FC1274496F700832E8B /* ViewModel.swift in Sources */,
+				05B12FC5274DD57100832E8B /* HomeView.swift in Sources */,
 				05B12FC32744980900832E8B /* MovieView.swift in Sources */,
 				051688F9273A246000A94CAE /* ContentView.swift in Sources */,
+				05B12FC7274DDA7F00832E8B /* SearchBarView.swift in Sources */,
 				051688F7273A246000A94CAE /* SwiftUIcarouselApp.swift in Sources */,
 				0516890C273A273200A94CAE /* SearchResult.swift in Sources */,
 				05168907273A24CF00A94CAE /* Service.swift in Sources */,

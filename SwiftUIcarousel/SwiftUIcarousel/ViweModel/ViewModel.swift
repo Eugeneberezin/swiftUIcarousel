@@ -9,6 +9,7 @@ import SwiftUI
 
 class ViewModel: ObservableObject {
     @Published var movies: [Result] = []
+    @Published var isTabBarDisplayed = true
     
     init() {}
     
