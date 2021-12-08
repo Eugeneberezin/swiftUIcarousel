@@ -36,11 +36,44 @@ struct MovieView: View {
                             .padding()
                             .frame(width: width)
                     case .empty:
-                        Color.black
+                        ZStack {
+                            Color.blue
+                            VStack {
+                                Text("Image is not available")
+                                    .foregroundColor(.white)
+                                Text(movie.originalTitle ?? "Title is not available")
+                                    .foregroundColor(.white)
+                                    .font(.largeTitle)
+                            }
+                        }
+                        .padding()
+                        .frame(width: width - 50, height: height, alignment: .center)
                     case .failure(_):
-                        Color.black
+                        ZStack {
+                            Color.blue
+                            VStack {
+                                Text("Image is not available")
+                                    .foregroundColor(.white)
+                                Text(movie.originalTitle ?? "Title is not available")
+                                    .foregroundColor(.white)
+                                    .font(.largeTitle)
+                            }
+                        }
+                        .padding()
+                        .frame(width: width - 50, height: height, alignment: .center)
                     @unknown default:
-                        Color.black
+                        ZStack {
+                            Color.blue
+                            VStack {
+                                Text("Image is not available")
+                                    .foregroundColor(.white)
+                                Text(movie.originalTitle ?? "Title is not available")
+                                    .foregroundColor(.white)
+                                    .font(.largeTitle)
+                            }
+                        }
+                        .padding()
+                        .frame(width: width - 50, height: height, alignment: .center)
                     }
                 }
             }

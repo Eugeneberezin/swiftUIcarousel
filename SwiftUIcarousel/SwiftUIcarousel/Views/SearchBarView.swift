@@ -47,6 +47,8 @@ struct SearchBarView: View {
                 }
                 .padding(.horizontal, 10)
                 .onTapGesture {
+                    viewModel.loadingStatus = LoadStatus.ready(nextPage: 1)
+                    viewModel.movies = []
                     isEditing = true
                     text = ""
                     viewModel.isTabBarDisplayed = false

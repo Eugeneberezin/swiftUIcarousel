@@ -28,7 +28,9 @@ class ViewModel: ObservableObject, RandomAccessCollection {
     var endIndex: Int {movies.endIndex}
     var loadingStatus = LoadStatus.ready(nextPage: 1)
     
-    init() {}
+    init() {
+        loadMoreMovies(searchTern: "Christmas")
+    }
     
     func shouldLoadMoreData(currentItem: Result? = nil) -> Bool {
         guard let currentItem = currentItem else {
@@ -57,16 +59,21 @@ class ViewModel: ObservableObject, RandomAccessCollection {
         print(page)
         
         Service.shared.fetchMovies(searchTerm: searchTern, page: page) { results, error in
-            
+            DispatchQueue.main.async { [weak self] in
+                guard let self = self else {return}
+                
+                self.movies.append(contentsOf: results)
+                if self.movies.count == 0 {
+                    self.loadingStatus = .ready(nextPage: page)
+                } else {
+                    guard case let .loading(page) = self.loadingStatus else {
+                        fatalError("Loading status is in a bad state")
+                    }
+                    self.loadingStatus = .ready(nextPage: page + 1)
+                }
+            }
         }
         
     }
     
-    func getMovies(searchTerm: String) {
-        Service.shared.fetchMovies(searchTerm: searchTerm) { movies, _ in
-            DispatchQueue.main.async {
-                self.movies = movies
-            }
-        }
-    }
 }

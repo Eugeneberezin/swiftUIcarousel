@@ -84,17 +84,18 @@ struct HomeView: View {
                     let screenSize: CGSize = screenReader.size
                     moviesCarossouel(screenSize: screenSize)
                 }
-                .onAppear {
-                    viewModel.getMovies(searchTerm: "Christmas")
+                .onChange(of: searchTerm) { newValue in
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 4.0) {
+                        viewModel.loadMoreMovies(searchTern: searchTerm)
+                    }
                 }
+                
             }
             .background {
                 Color.black
                     .ignoresSafeArea()
             }
-            .onChange(of: searchTerm, perform: { _ in
-                viewModel.getMovies(searchTerm: searchTerm)
-            })
+            
             .navigationBarItems(
                 leading: VStack(alignment: .leading, spacing: 5) {
                     Text("Hello Eugene")
@@ -113,9 +114,12 @@ struct HomeView: View {
         let itemWidth: CGFloat = screenSize.width * 0.8
        
         return ScrollView(.horizontal, showsIndicators: false) {
-            HStack(spacing: -100) {
+            LazyHStack(spacing: -100) {
                 ForEach(viewModel.movies) {movie in
                     MovieView(movie: movie, screenSize: screenSize, width: itemWidth)
+                        .onAppear {
+                            viewModel.loadMoreMovies(searchTern: searchTerm, currentItem: movie)
+                        }
                 }
             }
         }
